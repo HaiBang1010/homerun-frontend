@@ -23,7 +23,7 @@ const SOCIALS = [
 /** Footer — Figma node 14470:2002 ("Clients" in Figma). */
 export function SiteFooter() {
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-ink-900 text-white">
       {/* Figma columns total 1190px, so they only fit from 1280 up. */}
       <div className="container-hr grid gap-12 py-10 lg:grid-cols-2 xl:grid-cols-[422px_264px_1fr] xl:gap-x-30">
         <div className="flex flex-col gap-8">
@@ -42,9 +42,9 @@ export function SiteFooter() {
                   id="footer-email"
                   type="email"
                   placeholder="Email"
-                  // Without `text-neutral-900` the input inherits `text-white` from <footer>.
+                  // Without `text-ink-900` the input inherits `text-white` from <footer>.
                   // The `dark:` pair overrides `dark:bg-input/30` from ui/input.
-                  className="h-10 flex-1 rounded-[6px] border border-slate-line bg-white text-neutral-900 placeholder:text-slate-soft dark:bg-white dark:text-neutral-900"
+                  className="h-10 flex-1 rounded-[6px] border border-line bg-white text-ink-900 placeholder:text-soft dark:bg-white dark:text-ink-900"
                 />
                 <BrandButton type="submit" shape="rounded" className="type-body">
                   Gửi

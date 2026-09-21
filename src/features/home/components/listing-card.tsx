@@ -11,7 +11,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
 
   return (
     <article className="group flex h-110 flex-col overflow-hidden rounded-[20px] bg-white shadow-figma-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_14px_24px_-6px_rgba(0,0,0,0.14)]">
-      <div className="relative min-h-0 flex-1 overflow-hidden bg-neutral-100">
+      <div className="relative min-h-0 flex-1 overflow-hidden bg-ink-100">
         <img
           src={listing.image}
           alt={listing.name}
@@ -46,7 +46,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
           <Heart
             className={cn(
               'size-5 transition-colors duration-200',
-              liked ? 'fill-brand text-brand' : 'text-neutral-800',
+              liked ? 'fill-brand text-brand' : 'text-ink-800',
             )}
           />
         </button>
@@ -55,18 +55,18 @@ export function ListingCard({ listing }: { listing: Listing }) {
       <div className="flex shrink-0 flex-col gap-6 py-4">
         <div className="flex flex-col gap-4 px-4">
           <div className="flex flex-col gap-1">
-            <h3 className="truncate type-h4 font-semibold tracking-[-0.1px] text-neutral-800">
+            <h3 className="truncate type-h4 font-semibold tracking-[-0.1px] text-ink-800">
               {listing.name}
             </h3>
-            <p className="flex items-center gap-2 type-p-ui text-neutral-500">
+            <p className="flex items-center gap-2 type-p-ui text-ink-500">
               <MapPin aria-hidden className="size-4.5 shrink-0" />
               <span className="truncate">{listing.location}</span>
             </p>
 
             <p className="flex items-baseline gap-2">
               <span className="type-large font-semibold text-brand">{listing.price}</span>
-              <span aria-hidden className="h-3 w-px self-center bg-neutral-300" />
-              <span className="type-p-ui text-neutral-500">
+              <span aria-hidden className="h-3 w-px self-center bg-ink-300" />
+              <span className="type-p-ui text-ink-500">
                 {listing.area} m<sup className="text-[10.32px]">2</sup>
               </span>
             </p>
@@ -85,7 +85,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         <div className="px-4">
           <button
             type="button"
-            className="w-full rounded-full border border-neutral-300 px-4 py-2 type-body font-medium text-neutral-800 transition-colors duration-200 hover:border-brand hover:text-brand"
+            className="w-full rounded-full border border-ink-300 px-4 py-2 type-body font-medium text-ink-800 transition-colors duration-200 hover:border-brand hover:text-brand"
           >
             Xem chi tiết
           </button>

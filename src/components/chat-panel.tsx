@@ -51,8 +51,8 @@ function BotAvatar() {
 function BotMessage({ message }: { message: Message }) {
   return (
     <li className="flex flex-col items-start pr-10">
-      <div className="relative w-full rounded-tl-xl rounded-tr-xl rounded-br-xl bg-neutral-200 px-5 py-4 drop-shadow-[0px_2px_0.5px_rgba(0,0,0,0.05)] ml-5 mb-5">
-        <p className="text-[15px] text-neutral-800">{message.text}</p>
+      <div className="relative w-full rounded-tl-xl rounded-tr-xl rounded-br-xl bg-ink-200 px-5 py-4 drop-shadow-[0px_2px_0.5px_rgba(0,0,0,0.05)] ml-5 mb-5">
+        <p className="text-[15px] text-ink-800">{message.text}</p>
         <img
           src="/images/chat/bubble-tail-left.svg"
           alt=""
@@ -74,8 +74,8 @@ function UserMessage({ message }: { message: Message }) {
   return (
     <li className="flex flex-col items-end pr-3 pl-5">
       <div className="flex max-w-72.25 flex-col items-start">
-        <div className="relative w-full rounded-tl-xl rounded-tr-xl rounded-bl-xl bg-orange-200 px-5 py-4 drop-shadow-[0px_1px_0.5px_rgba(0,0,0,0.2)]">
-          <p className="text-[15px] text-neutral-800">{message.text}</p>
+        <div className="relative w-full rounded-tl-xl rounded-tr-xl rounded-bl-xl bg-brand-200 px-5 py-4 drop-shadow-[0px_1px_0.5px_rgba(0,0,0,0.2)]">
+          <p className="text-[15px] text-ink-800">{message.text}</p>
           <img
             src="/images/chat/bubble-tail-right.svg"
             alt=""
@@ -197,7 +197,7 @@ export function ChatPanel({ onClose }: { onClose: () => void }) {
           onChange={(event) => setDraft(event.target.value)}
           placeholder="Nhắn tin"
           aria-label="Nội dung tin nhắn"
-          className="h-10 flex-1 rounded-[6px] border border-slate-line bg-white text-neutral-900 placeholder:text-slate-soft dark:bg-white dark:text-neutral-900"
+          className="h-10 flex-1 rounded-[6px] border border-line bg-white text-ink-900 placeholder:text-soft dark:bg-white dark:text-ink-900"
         />
         <BrandButton
           type="submit"

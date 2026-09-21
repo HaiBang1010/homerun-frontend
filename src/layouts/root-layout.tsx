@@ -13,7 +13,7 @@ export function RootLayout() {
   const overHero = useLocation().pathname === '/'
 
   return (
-    <div className="flex min-h-svh flex-col bg-white text-neutral-900">
+    <div className="flex min-h-svh flex-col bg-white text-ink-900">
       <SiteHeader overHero={overHero} />
       <main className={cn('flex-1', !overHero && 'pt-20')}>
         <Outlet />
