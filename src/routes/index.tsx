@@ -1,18 +1,10 @@
-import { lazy, Suspense } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { Suspense, type ReactNode } from 'react'
+import { createBrowserRouter, type RouteObject } from 'react-router-dom'
 
-import { RootLayout } from '@/layouts/root-layout'
 import { Skeleton } from '@/components/ui/skeleton'
+import type { AppRoute, LayoutRoute } from '@/types/route'
 
-const HomePage = lazy(() =>
-  import('@/pages/home-page').then((m) => ({ default: m.HomePage })),
-)
-const PostsPage = lazy(() =>
-  import('@/pages/posts-page').then((m) => ({ default: m.PostsPage })),
-)
-const NotFoundPage = lazy(() =>
-  import('@/pages/not-found-page').then((m) => ({ default: m.NotFoundPage })),
-)
+import { routes } from './config'
 
 function PageFallback() {
   return (
@@ -24,18 +16,32 @@ function PageFallback() {
   )
 }
 
-function withSuspense(element: React.ReactNode) {
+function withSuspense(element: ReactNode) {
   return <Suspense fallback={<PageFallback />}>{element}</Suspense>
 }
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      { index: true, element: withSuspense(<HomePage />) },
-      { path: 'posts', element: withSuspense(<PostsPage />) },
-      { path: '*', element: withSuspense(<NotFoundPage />) },
-    ],
-  },
-])
+function hasChildren(route: AppRoute): route is LayoutRoute {
+  return Array.isArray(route.children) && route.children.length > 0
+}
+
+function buildRoute(route: AppRoute): RouteObject {
+  const { meta, children, element, ...rest } = route
+  const built: RouteObject = { ...rest }
+
+  if (meta) built.handle = meta
+
+  if (hasChildren(route)) {
+    if (element) built.element = element
+    built.children = route.children.map(buildRoute)
+  } else if (element) {
+    built.element = withSuspense(element)
+  }
+
+  return built
+}
+
+export function buildRoutes(list: AppRoute[]): RouteObject[] {
+  return list.map(buildRoute)
+}
+
+export const router = createBrowserRouter(buildRoutes(routes))
