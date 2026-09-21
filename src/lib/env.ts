@@ -1,14 +1,25 @@
-/** Single place to read env vars, failing fast on missing config. */
-function required(key: keyof ImportMetaEnv): string {
+/**
+ * Single place to read env vars.
+ * Every variable has a default so a fresh clone runs without a `.env`;
+ * copy `.env.example` only when you need to point at a different API.
+ */
+const DEFAULTS = {
+  VITE_API_BASE_URL: 'https://jsonplaceholder.typicode.com',
+  VITE_APP_NAME: 'Frontend Test',
+} as const
+
+function read(key: keyof typeof DEFAULTS): string {
   const value = import.meta.env[key]
-  if (!value) {
-    throw new Error(`Missing environment variable: ${key}`)
+  if (value) return value
+
+  if (import.meta.env.DEV) {
+    console.warn(`[env] ${key} is not set, falling back to "${DEFAULTS[key]}".`)
   }
-  return value
+  return DEFAULTS[key]
 }
 
 export const env = {
-  apiBaseUrl: required('VITE_API_BASE_URL'),
-  appName: import.meta.env.VITE_APP_NAME ?? 'App',
+  apiBaseUrl: read('VITE_API_BASE_URL'),
+  appName: read('VITE_APP_NAME'),
   isDev: import.meta.env.DEV,
 } as const
