@@ -10,7 +10,7 @@ import { Reveal } from "@/components/reveal";
  */
 export function ExploreMapSection() {
   return (
-    <section className="relative min-h-52 overflow-hidden bg-neutral-100 md:h-60">
+    <section className="relative min-h-52 overflow-hidden bg-ink-100 md:h-60">
       <img
         src="/images/home/explore-map.svg"
         alt=""
@@ -22,10 +22,10 @@ export function ExploreMapSection() {
 
       <div className="container-hr relative flex h-full flex-col items-center gap-6 pt-10 pb-10 md:pb-0">
         <Reveal className="flex max-w-190.75 flex-col gap-2 text-center">
-          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-neutral-800">
+          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-ink-800">
             Khám Phá Xung Quanh
           </h2>
-          <p className="type-large font-semibold text-neutral-400">
+          <p className="type-large font-semibold text-ink-400">
             Địa điểm ít biết, không có trên Google Maps.
           </p>
         </Reveal>

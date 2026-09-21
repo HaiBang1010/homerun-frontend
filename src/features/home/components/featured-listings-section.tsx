@@ -52,13 +52,13 @@ export function FeaturedListingsSection() {
   const goTo = (next: number) => setPage(Math.min(Math.max(next, 0), pageCount - 1))
 
   return (
-    <section className="bg-neutral-100 pt-12 pb-16">
+    <section className="bg-ink-100 pt-12 pb-16">
       <div className="container-hr">
         <Reveal className="mx-auto flex max-w-190.75 flex-col gap-2 text-center">
-          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-neutral-800">
+          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-ink-800">
             Cộng Đồng Homerun Nổi Bật
           </h2>
-          <p className="type-large font-semibold text-neutral-400">
+          <p className="type-large font-semibold text-ink-400">
             Danh sách bất động sản được săn đón
           </p>
         </Reveal>
@@ -104,7 +104,7 @@ export function FeaturedListingsSection() {
             aria-label="Trang trước"
             className="grid place-items-center rounded-full bg-white p-2 outline-none transition-all duration-200 focus-visible:ring-3 focus-visible:ring-brand/40 disabled:opacity-50 not-disabled:shadow-xs2 not-disabled:hover:scale-110"
           >
-            <ChevronLeft className="size-6 text-neutral-800" />
+            <ChevronLeft className="size-6 text-ink-800" />
           </button>
 
           {/* 16 dots do not fit one row at 335px. */}
@@ -124,8 +124,8 @@ export function FeaturedListingsSection() {
                 className={cn(
                   'h-2.5 cursor-pointer rounded-full transition-all duration-300 outline-none focus-visible:ring-3 focus-visible:ring-brand/50',
                   index === currentPage
-                    ? 'w-10 bg-neutral-800'
-                    : 'w-2.5 bg-neutral-300 hover:bg-neutral-400',
+                    ? 'w-10 bg-ink-800'
+                    : 'w-2.5 bg-ink-300 hover:bg-ink-400',
                 )}
               />
             ))}
@@ -138,7 +138,7 @@ export function FeaturedListingsSection() {
             aria-label="Trang sau"
             className="grid place-items-center rounded-full bg-white p-2 outline-none transition-all duration-200 focus-visible:ring-3 focus-visible:ring-brand/40 disabled:opacity-50 not-disabled:shadow-xs2 not-disabled:hover:scale-110"
           >
-            <ChevronRight className="size-6 text-neutral-800" />
+            <ChevronRight className="size-6 text-ink-800" />
           </button>
         </div>
       </div>

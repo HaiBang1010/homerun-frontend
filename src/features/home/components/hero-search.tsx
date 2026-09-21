@@ -64,7 +64,7 @@ export function HeroSearch() {
     >
       <div className="relative w-full sm:w-110">
         <div className="flex h-12 w-full items-center gap-2 rounded-full bg-white px-5">
-          <Search aria-hidden className="size-4.5 shrink-0 text-slate-soft" />
+          <Search aria-hidden className="size-4.5 shrink-0 text-soft" />
           <input
             type="text"
             role="combobox"
@@ -82,7 +82,7 @@ export function HeroSearch() {
             }}
             onFocus={() => setOpen(true)}
             onKeyDown={onKeyDown}
-            className="w-full min-w-0 bg-transparent type-p-ui font-medium text-slate-900 outline-none placeholder:text-slate-soft"
+            className="w-full min-w-0 bg-transparent type-p-ui font-medium text-ink-900 outline-none placeholder:text-soft"
           />
         </div>
 
@@ -90,7 +90,7 @@ export function HeroSearch() {
           <ul
             id={listId}
             role="listbox"
-            className="absolute inset-x-0 top-full z-10 mt-2 flex animate-in flex-col rounded-[24px] border border-slate-line bg-white p-2 text-left duration-200 fade-in slide-in-from-top-2 drop-shadow-[0px_2px_2.5px_rgba(0,0,0,0.06),0px_4px_3px_rgba(0,0,0,0.1)]"
+            className="absolute inset-x-0 top-full z-10 mt-2 flex animate-in flex-col rounded-[24px] border border-line bg-white p-2 text-left duration-200 fade-in slide-in-from-top-2 drop-shadow-[0px_2px_2.5px_rgba(0,0,0,0.06),0px_4px_3px_rgba(0,0,0,0.1)]"
           >
             {results.map((name, index) => (
               <li
@@ -105,11 +105,11 @@ export function HeroSearch() {
                 }}
                 className={cn(
                   'flex cursor-pointer items-center gap-2 rounded-[20px] px-3 py-2 transition-colors duration-150',
-                  index === activeIndex && 'bg-neutral-100',
+                  index === activeIndex && 'bg-ink-100',
                 )}
               >
-                <MapPin aria-hidden className="size-4.5 shrink-0 text-neutral-500" />
-                <span className="truncate type-p-ui text-neutral-500">{name}</span>
+                <MapPin aria-hidden className="size-4.5 shrink-0 text-ink-500" />
+                <span className="truncate type-p-ui text-ink-500">{name}</span>
               </li>
             ))}
           </ul>

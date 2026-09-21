@@ -16,7 +16,7 @@ export function HeroSection() {
   const [active, setActive] = useState(0)
 
   return (
-    <section className="relative h-203 w-full overflow-hidden bg-neutral-100 md:h-225">
+    <section className="relative h-203 w-full overflow-hidden bg-ink-100 md:h-225">
       {SLIDES.map((slide, index) => (
         <img
           key={index}
@@ -39,7 +39,7 @@ export function HeroSection() {
       <div aria-hidden className="absolute inset-0 bg-black/30" />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-neutral-100/0 to-neutral-100"
+        className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-ink-100/0 to-ink-100"
       />
 
       <div className="container-hr absolute inset-x-0 bottom-50 flex flex-col items-center gap-8">
@@ -72,7 +72,7 @@ export function HeroSection() {
             onClick={() => setActive(index)}
             className={cn(
               'h-2.5 cursor-pointer rounded-full transition-all duration-300 outline-none focus-visible:ring-3 focus-visible:ring-brand/50',
-              index === active ? 'w-10 bg-neutral-800' : 'w-2.5 bg-neutral-400 hover:bg-neutral-500',
+              index === active ? 'w-10 bg-ink-800' : 'w-2.5 bg-ink-400 hover:bg-ink-500',
             )}
           />
         ))}

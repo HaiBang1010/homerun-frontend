@@ -39,7 +39,7 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
       className={cn(
         "fixed inset-x-0 top-0 z-50 h-20 transition-all duration-300 m-4 rounded-full",
         solid
-          ? "bg-neutral-900/85 shadow-figma-lg backdrop-blur-lg"
+          ? "bg-ink-900/85 shadow-figma-lg backdrop-blur-lg"
           : "bg-none  to-transparent",
       )}
     >
@@ -86,7 +86,7 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
         </nav>
 
         <div className="flex flex-1 basis-0 items-center justify-end gap-3 xl:mr-2">
-          <span aria-hidden className="hidden h-8 w-px bg-neutral-300/60 lg:block" />
+          <span aria-hidden className="hidden h-8 w-px bg-ink-300/60 lg:block" />
 
           <BrandButton variant="light" asChild>
             <NavLink to="/tro-thanh-host">Trở thành Host</NavLink>
@@ -131,20 +131,20 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
                   to="/dang-nhap"
                   aria-label="Đăng nhập"
                   onClick={() => setMenuOpen(false)}
-                  className="grid size-10 place-items-center rounded-full transition-colors duration-150 hover:bg-neutral-100"
+                  className="grid size-10 place-items-center rounded-full transition-colors duration-150 hover:bg-ink-100"
                 >
                   <LogIn className="size-6 text-brand" />
                 </NavLink>
 
-                <span aria-hidden className="h-8 w-px bg-neutral-300" />
+                <span aria-hidden className="h-8 w-px bg-ink-300" />
 
                 <button
                   type="button"
                   onClick={() => setMenuOpen(false)}
                   aria-label="Đóng menu"
-                  className="grid size-10 place-items-center rounded-full transition-colors duration-150 hover:bg-neutral-100"
+                  className="grid size-10 place-items-center rounded-full transition-colors duration-150 hover:bg-ink-100"
                 >
-                  <X className="size-6 text-neutral-800" />
+                  <X className="size-6 text-ink-800" />
                 </button>
               </div>
 
@@ -159,10 +159,10 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
                     className={({ isActive }) =>
                       cn(
                         "p-5 type-p-ui font-medium transition-colors duration-150",
-                        index > 0 && "border-t-[0.5px] border-neutral-300",
+                        index > 0 && "border-t-[0.5px] border-ink-300",
                         isActive
                           ? "border-l-4 border-l-brand text-brand"
-                          : "text-neutral-800 hover:bg-neutral-50",
+                          : "text-ink-800 hover:bg-ink-50",
                       )
                     }
                   >
@@ -173,7 +173,7 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
 
               <button
                 type="button"
-                className="shrink-0 border-t-[0.5px] border-neutral-300 p-5 text-left type-p-ui font-medium text-red-600 transition-colors duration-150 hover:bg-neutral-50"
+                className="shrink-0 border-t-[0.5px] border-ink-300 p-5 text-left type-p-ui font-medium text-destructive transition-colors duration-150 hover:bg-ink-50"
               >
                 Đăng xuất
               </button>

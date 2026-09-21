@@ -13,13 +13,13 @@ export function RentalPlansSection() {
   const [open, setOpen] = useState(false)
 
   return (
-    <section className="bg-neutral-100 pt-12 pb-16">
+    <section className="bg-ink-100 pt-12 pb-16">
       <div className="container-hr">
         <Reveal className="mx-auto flex max-w-190.75 flex-col gap-2 text-center">
-          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-neutral-800">
+          <h2 className="type-h2 font-semibold tracking-[-0.225px] text-ink-800">
             Tùy Chọn Thuê Linh Hoạt
           </h2>
-          <p className="type-large font-semibold text-neutral-400">
+          <p className="type-large font-semibold text-ink-400">
             Các gói dịch vụ được thiết kế riêng cho mọi nhu cầu
           </p>
         </Reveal>
@@ -51,16 +51,16 @@ export function RentalPlansSection() {
                     {plan.name}
                   </h3>
                   <p className="flex flex-wrap items-end gap-1">
-                    <span className="type-h2 font-semibold tracking-[-0.225px] text-neutral-800">
+                    <span className="type-h2 font-semibold tracking-[-0.225px] text-ink-800">
                       {plan.price}
                     </span>
-                    <span className="type-h4 font-semibold tracking-[-0.1px] text-neutral-400">
+                    <span className="type-h4 font-semibold tracking-[-0.1px] text-ink-400">
                       VND /tháng
                     </span>
                   </p>
                 </div>
 
-                <p className="flex-1 type-p-ui text-neutral-500">{plan.description}</p>
+                <p className="flex-1 type-p-ui text-ink-500">{plan.description}</p>
 
                 <button
                   type="button"
@@ -68,7 +68,7 @@ export function RentalPlansSection() {
                     setSelected(plan)
                     setOpen(true)
                   }}
-                  className="w-full rounded-full border border-neutral-300 px-4 py-2 type-body font-medium text-neutral-800 transition-colors duration-200 hover:border-brand hover:text-brand"
+                  className="w-full rounded-full border border-ink-300 px-4 py-2 type-body font-medium text-ink-800 transition-colors duration-200 hover:border-brand hover:text-brand"
                 >
                   Xem chi tiết
                 </button>
@@ -85,7 +85,7 @@ export function RentalPlansSection() {
           ))}
         </ul>
 
-        <Reveal className="mt-8 flex flex-col type-body text-neutral-500">
+        <Reveal className="mt-8 flex flex-col type-body text-ink-500">
           {PLAN_NOTES.map((note) => (
             <span key={note}>{note}</span>
           ))}

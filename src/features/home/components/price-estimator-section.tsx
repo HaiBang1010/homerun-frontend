@@ -37,7 +37,7 @@ function Field({
     <Select value={value} onValueChange={onChange}>
       <SelectTrigger
         aria-label={placeholder}
-        className="w-full rounded-[6px] border-slate-line bg-white px-3 type-p-ui text-neutral-900 data-[size=default]:h-10 data-placeholder:text-slate-soft dark:bg-white dark:text-neutral-900 [&_svg]:size-5"
+        className="w-full rounded-[6px] border-line bg-white px-3 type-p-ui text-ink-900 data-[size=default]:h-10 data-placeholder:text-soft dark:bg-white dark:text-ink-900 [&_svg]:size-5"
       >
         <span className="flex min-w-0 items-center gap-2">
           {icon}
@@ -53,13 +53,13 @@ function Field({
         align="start"
         sideOffset={4}
         // Popper mode pins the viewport to one row tall; reset to auto.
-        className="w-(--radix-select-trigger-width) min-w-(--radix-select-trigger-width) rounded-[6px] border border-slate-line bg-white p-1 text-neutral-900 shadow-figma-md ring-0 dark:bg-white dark:text-neutral-900 **:data-[position=popper]:h-auto"
+        className="w-(--radix-select-trigger-width) min-w-(--radix-select-trigger-width) rounded-[6px] border border-line bg-white p-1 text-ink-900 shadow-figma-md ring-0 dark:bg-white dark:text-ink-900 **:data-[position=popper]:h-auto"
       >
         {options.map((option) => (
           <SelectItem
             key={option.value}
             value={option.value}
-            className="rounded-[4px] py-2 pl-3 type-p-ui text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900"
+            className="rounded-[4px] py-2 pl-3 type-p-ui text-ink-900 focus:bg-ink-100 focus:text-ink-900"
           >
             {option.label}
           </SelectItem>
@@ -88,7 +88,7 @@ export function PriceEstimatorSection() {
     : 0
 
   return (
-    <section className="relative overflow-hidden bg-neutral-50 pt-12 pb-33">
+    <section className="relative overflow-hidden bg-ink-50 pt-12 pb-33">
       <img
         src="/images/home/estimator-1920.jpg"
         srcSet="/images/home/estimator-960.jpg 960w, /images/home/estimator-1920.jpg 1920w"
@@ -145,19 +145,19 @@ export function PriceEstimatorSection() {
                   options={LOCATION_OPTIONS}
                   value={form.location}
                   onChange={set('location')}
-                  icon={<MapPin aria-hidden className="size-4.5 shrink-0 text-slate-soft" />}
+                  icon={<MapPin aria-hidden className="size-4.5 shrink-0 text-soft" />}
                 />
               </div>
             </div>
 
-            <div className="flex w-full shrink-0 flex-col items-center justify-center gap-5 bg-neutral-100 px-6 py-6 lg:w-90">
+            <div className="flex w-full shrink-0 flex-col items-center justify-center gap-5 bg-ink-100 px-6 py-6 lg:w-90">
               <div className="flex w-full flex-col items-center gap-2">
-                <p className="type-p-ui font-medium text-neutral-500">Giá Tổng Ước Tính</p>
+                <p className="type-p-ui font-medium text-ink-500">Giá Tổng Ước Tính</p>
                 <p className="flex items-baseline justify-center gap-1.5">
-                  <span className="type-h2 font-semibold tracking-[-0.225px] text-neutral-800">
+                  <span className="type-h2 font-semibold tracking-[-0.225px] text-ink-800">
                     {formatVnd(total)}
                   </span>
-                  <span className="type-h4 font-semibold tracking-[-0.1px] text-neutral-500">
+                  <span className="type-h4 font-semibold tracking-[-0.1px] text-ink-500">
                     VND
                   </span>
                 </p>
@@ -168,8 +168,8 @@ export function PriceEstimatorSection() {
                   type="submit"
                   disabled={!complete}
                   className={cn(
-                    'h-10 flex-1 rounded-full bg-neutral-800 px-4 type-body font-medium whitespace-nowrap text-white transition-all duration-150 lg:w-58 lg:flex-none',
-                    complete ? 'hover:bg-neutral-700 active:scale-[0.97]' : 'opacity-50',
+                    'h-10 flex-1 rounded-full bg-ink-800 px-4 type-body font-medium whitespace-nowrap text-white transition-all duration-150 lg:w-58 lg:flex-none',
+                    complete ? 'hover:bg-ink-700 active:scale-[0.97]' : 'opacity-50',
                   )}
                 >
                   Đặt gói
@@ -179,7 +179,7 @@ export function PriceEstimatorSection() {
                   onClick={() => setForm(EMPTY)}
                   disabled={!complete}
                   className={cn(
-                    'h-10 flex-1 rounded-full border border-neutral-300 bg-white px-4 type-body font-medium whitespace-nowrap text-neutral-800 transition-all duration-150',
+                    'h-10 flex-1 rounded-full border border-ink-300 bg-white px-4 type-body font-medium whitespace-nowrap text-ink-800 transition-all duration-150',
                     complete ? 'hover:border-brand hover:text-brand active:scale-[0.97]' : 'opacity-50',
                   )}
                 >

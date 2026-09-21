@@ -11,10 +11,10 @@ const brandButtonVariants = cva(
     variants: {
       variant: {
         primary: 'bg-brand text-brand-foreground hover:bg-brand-hover',
-        light: 'bg-white text-neutral-800 hover:bg-neutral-100',
-        dark: 'bg-neutral-800 text-white hover:bg-neutral-700',
+        light: 'bg-white text-ink-800 hover:bg-ink-100',
+        dark: 'bg-ink-800 text-white hover:bg-ink-700',
         outline:
-          'border border-neutral-300 bg-white text-neutral-800 hover:border-brand hover:text-brand',
+          'border border-ink-300 bg-white text-ink-800 hover:border-brand hover:text-brand',
         quiet: 'text-white hover:bg-white/10',
       },
       shape: {
