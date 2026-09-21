@@ -7,10 +7,12 @@ It currently hosts the **Homerun home page**, built from the `final-homerun` Fig
 ## Getting started
 
 ```bash
-cp .env.example .env   # if you do not have one yet
 npm install
 npm run dev            # http://localhost:5173
 ```
+
+No `.env` is needed to start — every variable has a default. Copy `.env.example`
+to `.env` only when you want to point at a different API.
 
 ## Scripts
 
@@ -25,12 +27,16 @@ npm run dev            # http://localhost:5173
 
 ## Environment variables
 
-Declared in `.env` (template in `.env.example`) and typed in [src/vite-env.d.ts](src/vite-env.d.ts).
+Optional. Declared in `.env` (template in `.env.example`), typed in
+[src/vite-env.d.ts](src/vite-env.d.ts) and read in [src/lib/env.ts](src/lib/env.ts),
+which falls back to the defaults below and warns in dev.
 
-| Variable | Meaning |
-| --- | --- |
-| `VITE_API_BASE_URL` | API base URL |
-| `VITE_APP_NAME` | Display name of the app |
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| `VITE_API_BASE_URL` | `https://jsonplaceholder.typicode.com` | API base URL |
+| `VITE_APP_NAME` | `Frontend Test` | Display name of the app |
+
+`.env` is git-ignored; only `.env.example` is committed.
 
 ## Structure
 
